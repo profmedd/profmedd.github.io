@@ -1,0 +1,37 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Links Directory</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <header class="header">
+            <h1>Links Directory</h1>
+            <p class="subtitle">A curated collection of useful web development resources</p>
+        </header>
+
+        <div id="links-container">
+            <div class="filter-bar">
+                <input type="text" id="search-input" placeholder="Search links or filter by tags..."
+                    class="search-input">
+                <div id="tag-filters" class="tag-filters"></div>
+            </div>
+
+            <div id="links-grid-container" class="links-grid">
+                <!-- Links will be dynamically loaded here -->
+            </div>
+
+            <div id="no-results" class="no-results" style="display: none;">
+                <p>No links found matching your search criteria.</p>
+            </div>
+        </div>
+    </div>
+    <script src="data.js" defer></script>
+    <script src="main.js" defer></script>
+</body>
+</html>
