@@ -157,5 +157,25 @@ const data =
             "url": "https://x.com/Manz/status/1968682837453799570",
             "description": "",
             "tags": ["otros", "twitter"]
+        },
+        {
+            "url": "https://sysxplore.com/",
+            "description": "Web con todo tipo de recursos sobre sistemas. En sus redes sociales comparten ChetSheets muy útiles",
+            "tags": ["sistemas", "linux"]
+        },
+         {
+            "url": "https://medium.muz.li/10-principles-of-good-web-design-1b837743ffa8",
+            "description": "Artículo sobre diseño",
+            "tags": ["diseño", "css"]
+        },
+         {
+            "url": "https://medium.com/design-bootcamp/dos-and-don-t-for-ui-design-7e5c86c71cac",
+            "description": "Consejos sobre que hacer y que no hacer en diseño web",
+            "tags": ["diseño", "css"]
+        },
+         {
+            "url": "https://www.justinmind.com/web-design",
+            "description": "Guía básica para el diseño web",
+            "tags": ["diseño", "css"]
         }
     ]
