@@ -170,7 +170,7 @@ const data =
         },
          {
             "url": "https://medium.com/design-bootcamp/dos-and-don-t-for-ui-design-7e5c86c71cac",
-            "description": "Consejos sobre que hacer y que no hacer en diseño web",
+            "description": "Consejos sobre qué hacer y qué no hacer en diseño web",
             "tags": ["diseño", "css"]
         },
          {
