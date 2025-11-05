@@ -177,5 +177,20 @@ const data =
             "url": "https://www.justinmind.com/web-design",
             "description": "Guía básica para el diseño web",
             "tags": ["diseño", "css"]
+        },
+        {
+            "url": "https://www.youtube.com/watch?v=Cx2dkpBxst8&list=PLXDU_eVOJTx7QHLShNqIXL1Cgbxj7HlN4&index=1",
+            "description": "Lista de reproducción de videos de Figma con lo básico para realizar tus diseños",
+            "tags": ["video", "diseño", "figma"]
+        },
+          {
+            "url": "https://lenguajejs.com/javascript/modulos/que-es-esm/",
+            "description": "Explicación e historia de los módulos ESM",
+            "tags": ["js", "webdev"]
+        },
+        {
+            "url": "https://es.javascript.info/modules-intro",
+            "description": "Explicación e historia de los módulos ESM",
+            "tags": ["js", "webdev"]
         }
     ]
