@@ -111,6 +111,8 @@ class LinksDirectory {
                 container.appendChild(sectionContainer);
             }
         });
+
+        this.loadTwitterWidgets(container);
     }
 
     createLinkCard(link) {
@@ -217,50 +219,46 @@ class LinksDirectory {
     }
 
     createTwitterPreview(url, container) {
-        // Obtener ID del tuit
-        let tweetId;
-        try {
-            tweetId = url.split('/status/')[1].split(/[/?]/)[0];
-        } catch {
+        if (!/\/status\/\d+/.test(url)) {
             console.warn('URL de tuit inválida:', url);
             return container;
         }
 
-        // Generar enlace a la publicación en publish.twitter.com
-        const publishUrl = `https://publish.twitter.com/oembed?url=${encodeURIComponent(url)}&omit_script=true`;
-
-        // Crear enlace contenedor
+        const blockquote = document.createElement('blockquote');
+        blockquote.className = 'twitter-tweet';
         const link = document.createElement('a');
         link.href = url;
         link.target = '_blank';
-        link.style.display = 'inline-block';
-        link.style.textDecoration = 'none';
-        link.style.color = 'inherit';
-
-        // Crear imagen de preview
-        const img = document.createElement('img');
-        // Nota: el endpoint oembed devuelve JSON con `thumbnail_url`, necesitamos fetch
-        fetch(publishUrl)
-            .then(res => res.json())
-            .then(data => {
-                if (data.thumbnail_url) {
-                    img.src = data.thumbnail_url;
-                    img.alt = 'Tweet preview';
-                    img.style.maxWidth = '100%';
-                    img.style.border = '1px solid #ccc';
-                } else {
-                    // Si no hay thumbnail, fallback a un enlace de texto
-                    link.textContent = 'Ver tuit';
-                }
-            })
-            .catch(() => {
-                link.textContent = 'Ver tuit';
-            });
-
-        link.appendChild(img);
-        container.appendChild(link);
+        link.rel = 'noopener noreferrer';
+        link.textContent = 'Ver publicación en X';
+        blockquote.appendChild(link);
+        container.appendChild(blockquote);
 
         return container;
+    }
+
+    loadTwitterWidgets(container) {
+        if (!container.querySelector('.twitter-tweet')) return;
+
+        const processEmbeds = () => {
+            if (window.twttr?.widgets) {
+                window.twttr.widgets.load(container);
+            }
+        };
+
+        if (window.twttr?.widgets) {
+            processEmbeds();
+            return;
+        }
+
+        let script = document.querySelector('script[src="https://platform.twitter.com/widgets.js"]');
+        if (!script) {
+            script = document.createElement('script');
+            script.src = 'https://platform.twitter.com/widgets.js';
+            script.async = true;
+            document.head.appendChild(script);
+        }
+        script.addEventListener('load', processEmbeds, { once: true });
     }
 
 
