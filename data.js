@@ -192,5 +192,9 @@ const data =
             "url": "https://es.javascript.info/modules-intro",
             "description": "Explicación e historia de los módulos ESM",
             "tags": ["js", "webdev"]
+        },{
+            "url": "https://x.com/midudev/status/1531270516690014208",
+            "description" : "Anchura recomendada para textos en tu web",
+            "tags" : ["css", "html", "diseño", "buenas prácticas"]
         }
     ]
